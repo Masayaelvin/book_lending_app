@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get "borrowings/create"
+  get "borrowings/destroy"
+  get "books/index"
+  get "books/show"
   resource :session
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

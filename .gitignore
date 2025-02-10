@@ -45,3 +45,4 @@
 Dockerfile
 Gemfile.lock
 /tmp
+/config/master.key
