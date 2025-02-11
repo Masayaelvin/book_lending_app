@@ -24,6 +24,7 @@
 # Ignore storage (uploaded files in development and any SQLite databases).
 /storage/*
 !/storage/.keep
+!/storage/development.sqlite3
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
@@ -33,9 +34,9 @@
 # Ignore master key for decrypting credentials and more.
 /.github
 /.kamal
-/app/assets
 /app/channels
-/app/helpers
+/app/helpers/*
+!/app/helpers/application_helper.rb
 /app/jobs
 /app/mailers
 /vendor

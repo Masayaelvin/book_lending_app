@@ -1,22 +1,20 @@
-<h1>Available Books</h1>
+<div class="container mt-4">
+  <h1 class="text-center text-primary">Available Books</h1>
 
-<!-- Navigation Bar -->
-<div style="float: right;">
-  <% if current_user %>
-    <span>Welcome, <%= current_user.email %>!</span> 
-    <%= link_to "Logout", logout_path, method: :delete, data: { turbo: false, confirm: "Are you sure you want to log out?" }, style: "color: red; margin-left: 10px;" %>
-    <%= link_to "My Books", user_profile_path, style: "color: blue; margin-left: 10px;" %> <!-- ✅ Added My Books -->
-  <% else %>
-    <%= link_to "Login", login_path, style: "color: green;" %>
-  <% end %>
+  <div class="row mt-3">
+    <% @books.each do |book| %>
+      <div class="col-md-4">
+        <!-- Clickable Card -->
+        <a href="<%= book_path(book) %>" class="book-card-link">
+          <div class="book-card <%= book.available? ? 'available' : 'borrowed' %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= book.title %></h5>
+              <p class="card-author">By <strong><%= book.author %></strong></p>
+              <p class="card-status"><%= book.available? ? "Available" : "Borrowed" %></p>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-<ul>
-  <% @books.each do |book| %>
-    <li>
-      <%= link_to book.title, book_path(book) %> - 
-      <%= book.author %> - 
-      <%= book.available? ? "Available" : "Borrowed" %>
-    </li>
-  <% end %>
-</ul>
