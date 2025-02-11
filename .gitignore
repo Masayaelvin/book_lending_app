@@ -41,7 +41,6 @@
 /vendor
 /lib
 /public
-/storage
 Dockerfile
 Gemfile.lock
 /tmp
