@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  allow_unauthenticated_access only: [:new, :create] # <-- Ensure this line exists
 
   def new
     @user = User.new
@@ -8,10 +7,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, notice: "Account created successfully! Please log in."
+      redirect_to login_path, notice: "Account created successfully! Please log in."
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @borrowed_books = current_user.borrowings.includes(:book) # ✅ Fetch borrowed books
   end
 
   private

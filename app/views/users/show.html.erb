@@ -1,9 +1,35 @@
 <h1>Your Borrowed Books</h1>
-<ul>
-  <% current_user.borrowings.each do |borrowing| %>
-    <li>
-      <%= borrowing.book.title %> - Due Date: <%= borrowing.due_date %>
-      <%= button_to "Return", borrowing_path(borrowing), method: :delete %>
-    </li>
-  <% end %>
-</ul>
+
+<!-- Navigation Bar -->
+<div style="float: right;">
+  <%= link_to "Home", books_path, class: "button", style: "margin-right: 10px; background: blue; color: white; padding: 8px; border-radius: 5px; text-decoration: none;" %>
+</div>
+
+<!-- Show message if no books are borrowed -->
+<% if @borrowed_books.empty? %>
+  <p>You haven't borrowed any books yet.</p>
+<% else %>
+  <table border="1" cellpadding="10">
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Due Date</th>
+      <th>Actions</th>
+    </tr>
+
+    <% @borrowed_books.each do |borrowing| %>
+      <tr>
+        <td><%= borrowing.book.title %></td>
+        <td><%= borrowing.book.author %></td>
+        <td><%= borrowing.due_date %></td>
+        <td>
+          <!-- Return Book Button -->
+          <%= button_to "Return", borrowing_path(borrowing), method: :delete, data: { confirm: "Are you sure you want to return this book?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<!-- Back to Books List -->
+<%= link_to "Back to Books", books_path, class: "button", style: "display: block; margin-top: 20px;" %>

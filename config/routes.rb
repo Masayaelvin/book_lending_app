@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   # Placeholder for login (optional)
   get "/login", to: "sessions#new" # If you plan to add login functionality
+  get "/profile", to: "users#show", as: :user_profile
 end
 
 end

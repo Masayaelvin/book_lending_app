@@ -1,13 +1,18 @@
 class BorrowingsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :require_login # Ensure user is logged in before borrowing
 
   def create
     book = Book.find(params[:book_id])
 
     if book.available?
-      borrowing = current_user.borrowings.create(book: book)
-      book.update(available: false)
-      redirect_to user_path(current_user), notice: "Book borrowed successfully."
+      borrowing = current_user.borrowings.new(book: book, due_date: 14.days.from_now) # ✅ Ensure due_date is set
+
+      if borrowing.save
+        book.update(available: false) # ✅ Only update book if borrowing succeeds
+        redirect_to books_path, notice: "Book borrowed successfully."
+      else
+        redirect_to book_path(book), alert: "Error borrowing the book. Please try again."
+      end
     else
       redirect_to book_path(book), alert: "This book is already borrowed."
     end
@@ -17,6 +22,6 @@ class BorrowingsController < ApplicationController
     borrowing = current_user.borrowings.find(params[:id])
     borrowing.book.update(available: true)
     borrowing.destroy
-    redirect_to user_path(current_user), notice: "Book returned successfully."
+    redirect_to books_path, notice: "Book returned successfully."
   end
 end
