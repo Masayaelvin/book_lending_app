@@ -1,4 +1,4 @@
-/* General Styling */
+/* Fixed CSS with valid comments and enhanced readability */
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f4f4f4;
@@ -7,7 +7,6 @@ body {
   padding: 0;
 }
 
-/* Navbar */
 .navbar {
   background-color: #007bff;
   padding: 10px;
@@ -24,7 +23,6 @@ body {
   text-decoration: underline;
 }
 
-/* Buttons */
 .btn-custom {
   background-color: #007bff;
   color: white;
@@ -38,7 +36,6 @@ body {
   background-color: #0056b3;
 }
 
-/* Form Styling */
 .form-container {
   background: white;
   padding: 20px;
@@ -48,7 +45,6 @@ body {
   margin: auto;
 }
 
-/* Book List */
 .book-list {
   list-style-type: none;
   padding: 0;
@@ -62,8 +58,8 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-// for the form
-/* Center the form */
+/* Fixed comment syntax */
+/* Form styling */
 .signup-container {
   max-width: 400px;
   margin: 50px auto;
@@ -74,7 +70,6 @@ body {
   text-align: center;
 }
 
-/* Form Fields */
 .signup-container input {
   width: 100%;
   padding: 10px;
@@ -83,7 +78,6 @@ body {
   border-radius: 5px;
 }
 
-/* Form Labels */
 .signup-container label {
   font-weight: bold;
   display: block;
@@ -91,7 +85,6 @@ body {
   margin-top: 10px;
 }
 
-/* Submit Button */
 .signup-container .btn-signup {
   width: 100%;
   background-color: #007bff;
@@ -108,7 +101,6 @@ body {
   background-color: #0056b3;
 }
 
-/* Login Link */
 .signup-container .login-link {
   display: block;
   margin-top: 10px;
@@ -121,55 +113,7 @@ body {
   text-decoration: underline;
 }
 
-/* Book Cards Styling */
-.book-card {
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: white;
-  transition: transform 0.3s ease-in-out;
-}
-
-.book-card:hover {
-  transform: scale(1.05);
-}
-
-/* Available Books - Green Background */
-.available {
-  background-color: #28a745; /* Green */
-}
-
-/* Borrowed Books - Orange Background */
-.borrowed {
-  background-color: #fd7e14; /* Orange */
-}
-
-/* Book Title */
-.book-title {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-}
-
-.book-title:hover {
-  text-decoration: underline;
-}
-
-/* Book Author */
-.card-author {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* Book Status */
-.card-status {
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-/* General Styles */
+/* Book cards - Fixed text contrast and hover states */
 .container {
   font-family: "Arial", sans-serif;
 }
@@ -177,6 +121,7 @@ body {
 .book-card-link {
   text-decoration: none;
   color: inherit;
+  display: block; /* Ensure proper card spacing */
 }
 
 .book-card {
@@ -185,7 +130,7 @@ body {
   transition: all 0.3s ease;
   margin-bottom: 20px;
   overflow: hidden;
-  background-color: rgb(136, 132, 132);
+  background-color: #f8f9fa; /* Lightened background for better contrast */
 }
 
 .book-card .card-body {
@@ -195,54 +140,48 @@ body {
 .card-title {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #333;
+  color: #212529; /* Darker text for better readability */
 }
 
 .card-author {
   font-size: 1rem;
-  color: #555;
+  color: #495057;
 }
 
 .card-status {
   font-size: 0.9rem;
   font-weight: bold;
   margin-top: 10px;
-  color: #555;
+  color: #495057;
 }
 
-/* Available Book Styles */
+/* Available Books */
 .book-card.available {
-  border-color: #28a745; /* Green border */
+  border-color: #28a745;
 }
 
 .book-card.available:hover {
-  background-color: #28a745; /* Green background on hover */
+  background-color: #28a745;
   color: white;
 }
 
-.book-card.available:hover .card-title,
-.book-card.available:hover .card-author,
-.book-card.available:hover .card-status {
-  color: white;
-}
-
-/* Borrowed Book Styles */
+/* Borrowed Books */
 .book-card.borrowed {
-  border-color: #dc3545; /* Red border */
+  border-color: #dc3545;
 }
 
 .book-card.borrowed:hover {
-  background-color: #dc3545; /* Red background on hover */
+  background-color: #dc3545;
   color: white;
 }
 
-.book-card.borrowed:hover .card-title,
-.book-card.borrowed:hover .card-author,
-.book-card.borrowed:hover .card-status {
-  color: white;
+/* Universal hover text color */
+.book-card:hover .card-title,
+.book-card:hover .card-author,
+.book-card:hover .card-status {
+  color: white !important; /* Force white text on hover */
 }
 
-/* Hover Effects */
 .book-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);

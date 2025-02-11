@@ -1,30 +1,36 @@
+# This file defines the routes for the book library application.
+# It maps HTTP requests to controller actions, specifying which controller and action should handle each request.
+# The routes include:
+# - User registration and login/logout
+# - Borrowing creation and destruction
+# - Viewing books (index and show)
+# - Session management
+# - Password management with token parameter
+# The root path is set to the books index action.
+
 Rails.application.routes.draw do
+  
   get "users/new"
   get "users/create"
   get "borrowings/create"
   get "borrowings/destroy"
   get "books/index"
   get "books/show"
+
   resource :session
   resources :passwords, param: :token
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  root "books#index"
 
-  
-    root "books#index"
+  resources :books, only: [:index, :show]
+  resources :borrowings, only: [:create, :destroy]
 
-    resources :books, only: [:index, :show]
-    resources :borrowings, only: [:create, :destroy]
+  # ✅ Fix: Add POST route for registration
+  get "/register", to: "users#new", as: :register
+  post "/register", to: "users#create"  # ✅ Add this line to handle form submission
 
-    get "/register", to: "users#new", as: :register
-    get "/login", to: "sessions#new"
-    get"/logout", to: "sessions#destroy" # ✅ Logout route
+  get "/login", to: "sessions#new"
+  get "/logout", to: "sessions#destroy"
 
-    get "/profile", to: "users#show", as: :user_profile
-  
-
-
+  get "/profile", to: "users#show", as: :user_profile
 end

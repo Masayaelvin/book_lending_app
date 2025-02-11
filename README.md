@@ -1,5 +1,3 @@
-Sure! Below is a well-structured `README.md` file for your **Book Lending App** project:  
-
 ```markdown
 # 📚 Book Lending App
 
@@ -51,7 +49,7 @@ gem install rails -v 8.0
 Navigate to your preferred directory and clone the **Book Lending App** repository:
 
 ```sh
-git clone https://github.com/Masayaelvin/book_lending_app.git
+git clone https://github.com/your-username/book-lending-app.git
 cd book-lending-app
 ```
 
@@ -80,27 +78,22 @@ By default, the app will run on **localhost:3000**. Open your browser and visit:
 2. **Borrow a Book:**  
    - Click on a book title.  
    - If not logged in, you will be redirected to a login page.  
-   - Create an account or log in to proceed.  
+   - Create an account or log in to proceed. 
+   - you'll be redirected to a page confirming the book has been borrowed.
+   - The book will now appear in **red** under **"My Books"**. 
 
 3. **View Borrowed Books:**  
    - After logging in, visit the **"My Books"** section from the navigation bar.  
+   -click the BOOK library to view the the books again
 
 4. **Return a Book:**  
    - Navigate to **"My Books"** and return any borrowed book.  
+   - simply click on the return button to return a book.
+   
 
 ---
 
-## 🤝 Contributing
 
-Feel free to submit issues and pull requests. Contributions are welcome! 🚀
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
----
 
 Happy coding! 🎉
 ```
@@ -110,5 +103,3 @@ Happy coding! 🎉
 - Easy-to-copy commands for installing dependencies and running the app.
 - Explanation of how to use the app.
 - Includes a contribution and license section.
-
-Let me know if you'd like any modifications! 🚀
