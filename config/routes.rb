@@ -13,19 +13,18 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  Rails.application.routes.draw do
-  root "books#index"
+  
+    root "books#index"
 
-  resources :books, only: [:index, :show]
-  resources :borrowings, only: [:create, :destroy]
+    resources :books, only: [:index, :show]
+    resources :borrowings, only: [:create, :destroy]
 
-  # Authentication Routes
-  get "/register", to: "users#new"
-  post "/users", to: "users#create"
+    get "/register", to: "users#new", as: :register
+    get "/login", to: "sessions#new"
+    get"/logout", to: "sessions#destroy" # ✅ Logout route
 
-  # Placeholder for login (optional)
-  get "/login", to: "sessions#new" # If you plan to add login functionality
-  get "/profile", to: "users#show", as: :user_profile
-end
+    get "/profile", to: "users#show", as: :user_profile
+  
+
 
 end

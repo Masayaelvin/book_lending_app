@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
     terminate_session
-    redirect_to new_session_path, notice: "You have been logged out."
+    redirect_to books_path, notice: "You have been logged out."
   end
 end
