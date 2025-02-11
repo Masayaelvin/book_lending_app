@@ -5,10 +5,10 @@ class BorrowingsController < ApplicationController
     book = Book.find(params[:book_id])
 
     if book.available?
-      borrowing = current_user.borrowings.new(book: book, due_date: 14.days.from_now) # ✅ Ensure due_date is set
+      borrowing = current_user.borrowings.new(book: book, due_date: 14.days.from_now) #  Ensure due_date is set
 
       if borrowing.save
-        book.update(available: false) # ✅ Only update book if borrowing succeeds
+        book.update(available: false) # update book if borrowing succeeds
         redirect_to books_path, notice: "Book borrowed successfully."
       else
         redirect_to book_path(book), alert: "Error borrowing the book. Please try again."

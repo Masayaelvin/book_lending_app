@@ -12,12 +12,12 @@ class ApplicationController < ActionController::Base
     @current_user
   end
 
-  # ✅ Add this method to create a session for a logged-in user
+  #  this method to create a session for a logged-in user
   def start_new_session_for(user)
     session[:user_id] = user.id
   end
 
-  # ✅ Add this method to log out a user
+  #  this method to log out a user
   def terminate_session
     session[:user_id] = nil
   end

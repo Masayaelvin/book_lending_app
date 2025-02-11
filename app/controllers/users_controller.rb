@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @borrowed_books = current_user.borrowings.includes(:book) # ✅ Fetch borrowed books
+    @borrowed_books = current_user.borrowings.includes(:book) # Fetch borrowed books
   end
 
   private
