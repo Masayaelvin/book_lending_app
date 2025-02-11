@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "users/new"
+  get "users/create"
   get "borrowings/create"
   get "borrowings/destroy"
   get "books/index"
@@ -11,10 +13,18 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
-  # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
+  Rails.application.routes.draw do
+  root "books#index"
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  resources :books, only: [:index, :show]
+  resources :borrowings, only: [:create, :destroy]
+
+  # Authentication Routes
+  get "/register", to: "users#new"
+  post "/users", to: "users#create"
+
+  # Placeholder for login (optional)
+  get "/login", to: "sessions#new" # If you plan to add login functionality
+end
+
 end

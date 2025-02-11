@@ -6,4 +6,7 @@ class User < ApplicationRecord
   has_many :books, through: :borrowings
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
+
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true, length: { minimum: 6 }
 end
