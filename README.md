@@ -49,8 +49,8 @@ gem install rails -v 8.0
 Navigate to your preferred directory and clone the **Book Lending App** repository:
 
 ```sh
-git clone https://github.com/your-username/book-lending-app.git
-cd book-lending-app
+git clone https://github.com/Masayaelvin/book_lending_app.git
+cd book_lending_app
 ```
 
 ---
@@ -79,8 +79,9 @@ By default, the app will run on **localhost:3000**. Open your browser and visit:
    - Click on a book title.  
    - If not logged in, you will be redirected to a login page.  
    - Create an account or log in to proceed. 
-   - you'll be redirected to a page confirming the book has been borrowed.
-   - The book will now appear in **red** under **"My Books"**. 
+   - you'll be redirected to a page confirming if the book has been borrowed or not.
+   - The click the borrow button to borrow the selected, the book will now appear in **red** under **"My Books"**. 
+   - In your user account you will be able to see the books you have borrowed and their due date
 
 3. **View Borrowed Books:**  
    - After logging in, visit the **"My Books"** section from the navigation bar.  

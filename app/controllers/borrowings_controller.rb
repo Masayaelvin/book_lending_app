@@ -20,7 +20,7 @@ class BorrowingsController < ApplicationController
 
   def destroy
     borrowing = current_user.borrowings.find(params[:id])
-    borrowing.book.update(available: true)
+    borrowing.book.update(available: true)#update the succesful return of a book 
     borrowing.destroy
     redirect_to user_profile_path, notice: "Book returned successfully."
   end
