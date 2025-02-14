@@ -25,9 +25,9 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show]
   resources :borrowings, only: [:create, :destroy]
 
-  # ✅ Fix: Add POST route for registration
+
   get "/register", to: "users#new", as: :register
-  post "/register", to: "users#create"  # ✅ Add this line to handle form submission
+  post "/register", to: "users#create"  
 
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"

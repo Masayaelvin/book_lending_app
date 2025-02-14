@@ -22,6 +22,6 @@ class BorrowingsController < ApplicationController
     borrowing = current_user.borrowings.find(params[:id])
     borrowing.book.update(available: true)
     borrowing.destroy
-    redirect_to books_path, notice: "Book returned successfully."
+    redirect_to user_profile_path, notice: "Book returned successfully."
   end
 end
