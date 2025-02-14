@@ -74,20 +74,6 @@ This ensures all dependencies (like `sqlite3`, `bcrypt`, etc.) are installed.
 
 ---
 
-## **🔧 Setup the Database**  
-
-📌 Run the following commands to set up the database:  
-```sh
-rails db:create        # Create the database
-rails db:migrate       # Run migrations
-rails db:seed          # Seed initial data (if applicable)
-```
-If you're running tests, also **migrate the test database**:  
-```sh
-rails db:migrate RAILS_ENV=test
-```
-
----
 
 ## **🏃‍♂️ Start the Rails Server**  
 
