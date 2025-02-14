@@ -59,7 +59,7 @@ cd book_lending_app
 
 Once inside the project directory, start the Rails server by running:
 
-```sh
+```
 rails server
 ```
 
@@ -90,17 +90,22 @@ By default, the app will run on **localhost:3000**. Open your browser and visit:
 4. **Return a Book:**  
    - Navigate to **"My Books"** and return any borrowed book.  
    - simply click on the return button to return a book.
+
+5. **UI**
+   - The app has the following pages:
+     - **Home Page:** Displays all available books.
+     - **My Books:** Shows all books borrowed by the user.
+     - **Book Details:** Displays the details of a selected book.
+     - **Login:** Allows users to log in.
+     - **Sign Up:** Allows users to create an account.
    
 
 ---
 
 
 
-Happy coding! 🎉
-```
-
 ### 🔥 Features of This Markdown:
 - Clearly structured sections.
 - Easy-to-copy commands for installing dependencies and running the app.
 - Explanation of how to use the app.
-- Includes a contribution and license section.
+
