@@ -128,11 +128,6 @@ cd book_lending_app
 # Install dependencies
 bundle install
 
-# Setup the database
-rails db:create
-rails db:migrate
-rails db:seed  # If applicable
-
 # Run the application
 rails server
 
