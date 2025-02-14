@@ -155,6 +155,6 @@ rails server
 ---
 
 ### **🔥 Features of This Markdown**
-✔ **Clearly structured sections**  
+✔ feel free to reach me via email at [masayaelvin@gmail.com](mailto:masayaelvin@gmail.com)  
 ✔ **All required installation and setup commands included**  
 ✔ **Easy-to-follow instructions for running the app**  
