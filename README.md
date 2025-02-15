@@ -11,7 +11,7 @@ To run this application, ensure you have **Ruby**, **Ruby on Rails 8**, **Bundle
 ---
 
 ## **✅ Check if Ruby, Rails, and Bundler are Installed**  
-
+This application only works in ruby 3.2.0 or higher  version
 Run the following commands to verify if you have **Ruby**, **Rails 8**, and **Bundler**:  
 
 ```sh
@@ -26,28 +26,11 @@ If **Ruby, Rails 8, or Bundler** is not installed, follow the installation steps
 
 ## **🔧 Install Ruby, Rails 8, and Dependencies**  
 
-### **📌 For macOS & Linux (Using RVM)**  
-```sh
-\curl -sSL https://get.rvm.io | bash -s stable
-source ~/.rvm/scripts/rvm
-rvm install ruby
-gem install rails -v 8.0
-gem install bundler
-```
-
-### **📌 For Ubuntu/Debian (Using APT)**  
-```sh
-sudo apt update
-sudo apt install ruby-full build-essential libsqlite3-dev
-gem install rails -v 8.0
-gem install bundler
-```
-
-### **📌 For Windows (Using RubyInstaller)**  
+## **📌 For Windows (Using RubyInstaller)**  
 1. Download and install **Ruby** from [RubyInstaller](https://rubyinstaller.org/).  
 2. Open Command Prompt and install Rails 8:  
    ```sh
-   gem install rails -v 8.0
+   gem install rails -v 8.0.1
    gem install bundler
    ```
 
